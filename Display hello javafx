@@ -1,0 +1,26 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class HelloJavaFX extends Application {
+    public void start(Stage primaryStage) {
+        String javaVersion = System.getProperty("java.version");
+        String javafxVersion = System.getProperty("javafx.runtime.version");
+        Label message = new Label("Hello, JavaFX!");
+        Label javaLabel = new Label("Java Version: " + javaVersion);
+        Label javafxLabel = new Label("JavaFX Version: " + javafxVersion);
+        VBox root = new VBox(10); // spacing = 10
+        root.getChildren().addAll(message, javaLabel, javafxLabel);
+        Scene scene = new Scene(root, 300, 150);
+
+        primaryStage.setTitle("JavaFX Example");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
